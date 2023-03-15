@@ -1,0 +1,76 @@
+//Yvette Chavez (ychaves48@toromail.csudh.edu)
+
+import java.util.*;
+import java.io.*;
+
+public class FileCopy {
+	
+	public static void main(String[] args) throws IOException{
+	
+		Scanner s = new Scanner(System.in);
+                System.out.println("Enter the InputPath");
+		String inputPath=s.nextLine();
+                System.out.println("Enter the OutputPath");
+		String outputPath=s.nextLine();
+		fileCopier(inputPath, outputPath);
+		
+		
+		
+	}
+        static void fileCopier(String inputPath,String outputPath) throws IOException
+        {
+            
+                    File inputFile=new File(inputPath);
+                    File outputFile=new File(outputPath);
+                    File temp=null;
+                    FileReader readFile=null;
+                    FileWriter writeFile=null;
+			
+			readFile = new FileReader(inputPath);
+					
+			if(inputFile.exists()){
+				if(outputFile.exists()){
+			
+					temp = new File(outputPath+"\\"+inputPath.substring(0,inputPath.indexOf("."))+" - Copy"+inputPath.substring(inputPath.indexOf("."),inputPath.length()));
+					
+					if(temp.exists()){
+						int i=2;
+						int a;
+						while(true){
+							temp = new File(outputPath+"\\"+inputPath.substring(0,inputPath.indexOf("."))+" - Copy ("+i+")"+inputPath.substring(inputPath.indexOf("."),inputPath.length()));
+							if(!temp.exists()){
+								break;
+							}
+							i++;
+						}
+						writeFile = new FileWriter(outputPath+"\\"+inputPath.substring(0,inputPath.indexOf("."))+" - Copy ("+i+")"+inputPath.substring(inputPath.indexOf("."),inputPath.length()));
+						while((a=readFile.read())!=-1){
+							writeFile.write(a);
+						}
+						System.out.println("Successfully.");
+					}else{
+						int a;
+						writeFile = new FileWriter(outputPath+"\\"+inputPath.substring(0,inputPath.indexOf("."))+" - Copy"+inputPath.substring(inputPath.indexOf("."),inputPath.length()));
+						while((a=readFile.read())!=-1){
+							writeFile.write(a);
+						}
+						System.out.println("Successfully.");
+					}
+				}else{
+					int a;
+					writeFile = new FileWriter(outputPath+"\\"+inputPath);
+					while((a=readFile.read())!=-1){
+						writeFile.write(a);
+					}
+					System.out.println("Successfully.");
+				}
+			}else if(!inputFile.exists()){
+				System.out.println("Does not exist.");
+				System.exit(0);
+
+			}
+			readFile.close();
+			writeFile.close();
+		
+        }
+}
