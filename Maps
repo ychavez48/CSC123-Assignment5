@@ -1,0 +1,16 @@
+A map data structure is just a collection of unique keys and values where each has a specific value. 
+The map and SortedMap has three classes. They are known as HashMap, TreeMap, and Linked HashMap. 
+HashMap is it class that allows operations like inserting, deleting and locating certain elements in a map.
+A few methods available in HashMap include enumeration keys() (which fetches the keys), Boolean contains key(object key)
+(checks whether a key is present in a HashMap) or object remove(object key) (which passes a key but removes the object. 
+TreeMap on the other hand stores the key value and pairs and sorted order which allows faster retrieval. 
+Unlike HashMap, TreeMap allows the user to have access to the elements in ascending order. Some methods in TreeMap 
+include Boolean containsKey(object key) (which refers to returning true or false if the map contains a mapping 
+for specific key) , set entrySet() (which refers to returning a set of view of mappings contained in the map) or
+SortedMap headMap(object key) (which refers to returning the view of the portion of the map which keys are strictly less).
+Finally, LinkedHashSet refers to a class in Java that has collections of frameworks which allow the functionalities
+of both the hash table and the linked list data structures. In other words, this class defines the order in which the 
+elements are inserted into the hash tables. Map data structures in other words is an easier or more organized way of 
+doing an array. A few methods would also be included under map would be containsValue(object) (which returns a Boolean 
+If a specified value is mapped), Equals(object) (which returns the value mapped with a specified key or also let user
+know if the key is not mapped) or size() (which simply lets the user know the total number of keys and value pairs in a map).
