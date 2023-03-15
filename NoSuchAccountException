@@ -1,0 +1,10 @@
+//Yvette Chavez (ychaves48@toromail.csudh.edu)
+
+public class NoSuchAccountException extends Exception{
+	public NoSuchAccountException() {
+        super("Error the account does not exist");
+    }
+	public NoSuchAccountException(String s) {
+        super(s);
+    }
+}
