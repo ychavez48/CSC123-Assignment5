@@ -1,0 +1,13 @@
+//Yvette Chavez (ychaves48@toromail.csudh.edu)
+
+public class AccountClosedException extends Exception{
+	public char[] getMessage;
+	public AccountClosedException() {
+        super("The account has been closed.");
+        
+    }
+	public AccountClosedException(String s) {
+        super(s);
+        
+    }
+}
